@@ -1,1 +1,0 @@
-# LD_ISKfu-22_Oleksandr_Rosolov

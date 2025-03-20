@@ -23,35 +23,12 @@
 #define Red_LED_PIN     14
 #define Orange_LED_PIN     13
 #define GPIOD_CLK_EN()  (RCC->AHB1ENR |= (1 << 3))
+#define BUTTON_PIN      0
+#define BUTTON_PORT     GPIOA
+
 
 volatile uint32_t millis = 0;
-/* Private includes ----------------------------------------------------------*/
-/* USER CODE BEGIN Includes */
 
-/* USER CODE END Includes */
-
-/* Private typedef -----------------------------------------------------------*/
-/* USER CODE BEGIN PTD */
-
-/* USER CODE END PTD */
-
-/* Private define ------------------------------------------------------------*/
-/* USER CODE BEGIN PD */
-
-/* USER CODE END PD */
-
-/* Private macro -------------------------------------------------------------*/
-/* USER CODE BEGIN PM */
-
-/* USER CODE END PM */
-
-/* Private variables ---------------------------------------------------------*/
-
-/* USER CODE BEGIN PV */
-
-/* USER CODE END PV */
-
-/* Private function prototypes -----------------------------------------------*/
 ///////////void SystemClock_Config(void);
 void SysTick_Handler(void) {
     millis++;  // Increment every 1ms (assuming 1ms SysTick configured)
@@ -74,66 +51,65 @@ void GPIO_Config(void) {
     GPIOD->OTYPER &= ~(1 << Orange_LED_PIN);       // Push-pull output
     GPIOD->OSPEEDR |= (2 << (Orange_LED_PIN * 2)); // Medium speed
     GPIOD->PUPDR &= ~(3 << (Orange_LED_PIN * 2));  // No pull-up/pull-down
+
+    RCC->AHB1ENR |= (1 << 0);  // Bit 0: GPIOA Clock enable
+    BUTTON_PORT->MODER &= ~(3 << (BUTTON_PIN * 2)); // Clear mode bits
+    BUTTON_PORT->PUPDR &= ~(3 << (BUTTON_PIN * 2));  // Clear
+    BUTTON_PORT->PUPDR |= (2 << (BUTTON_PIN * 2));   // Pull-down
 }
 void SysTick_Config_Custom(void) {
-    SysTick->LOAD = (16000 - 1);  // Assuming 16 MHz clock => 1ms tick
+    SysTick->LOAD = (16000 - 1);  //16 MHz clock => 1ms tick
     SysTick->VAL = 0;
     SysTick->CTRL = 7;  // Enable SysTick, use system clock, enable interrupt
 }
 
-
-
 ////////static void MX_GPIO_Init(void);
-/* USER CODE BEGIN PFP */
 
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-
-/* USER CODE END 0 */
-
-/**
-  * @brief  The application entry point.
-  * @retval int
-  */
 int main(void)
 {
-  /* USER CODE BEGIN 1 */
 
-  /* USER CODE END 1 */
-
-  /* MCU Configuration--------------------------------------------------------*/
-
-  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-  //////HAL_Init();
-
-  /* USER CODE BEGIN Init */
-
-  /* USER CODE END Init */
-
-  /* Configure the system clock */
   //////SystemClock_Config();
 
-  /* USER CODE BEGIN SysInit */
-
-  /* USER CODE END SysInit */
-
-  /* Initialize all configured peripherals */
   //////MX_GPIO_Init();
-  /* USER CODE BEGIN 2 */
 
-  /* USER CODE END 2 */
   SysTick_Config_Custom();  // Configure SysTick for 1ms
   GPIO_Config();            // Configure LED pin
+  RCC->AHB1ENR |= (1 << 3);
 
   uint32_t prevMillis14 = 0;
   uint32_t prevMillis13 = 0;
-  /* Infinite loop */
-  /* USER CODE BEGIN WHILE */
+  uint32_t prevMillis = 0;
+  uint32_t orangeBlinkPeriod = 1000;
+  uint8_t PreviousState = 0;
+
   while (1)
   {
     /* USER CODE END WHILE */
+	  /*
+	  // Task 1
+	   if ((millis - prevMillis) <= 1000) {//0
+	              GPIOD->ODR &= ~(1 << Orange_LED_PIN);
+	              GPIOD->ODR &= ~(1 << Red_LED_PIN);//Low
+	   }
+	   if ((millis - prevMillis) > 1000 && (millis - prevMillis) <= 2000) {//1
+	              //GPIOD->ODR &= ~(1 << Orange_LED_PIN);
+	              GPIOD->ODR |= (1 << Red_LED_PIN);//High
+	   }
+	   if ((millis - prevMillis) > 2000 && (millis - prevMillis) <= 3000) {//2
+	              GPIOD->ODR |= (1 << Orange_LED_PIN);
+	              GPIOD->ODR &= ~(1 << Red_LED_PIN);
+	   }
+	   if ((millis - prevMillis) > 3000 && (millis - prevMillis) <= 4000) {//3
+	   	              //GPIOD->ODR |= (1 << Orange_LED_PIN);
+	   	              GPIOD->ODR |= (1 << Red_LED_PIN);
+	   	  }
+	   if ((millis - prevMillis) > 4000){
+		   prevMillis = millis;
+	   }
+
+	   */
+	  /*
+	  //Task 2
 	  if ((millis - prevMillis14) >= 1000) {  // Check if 1000ms elapsed
 	              GPIOD->ODR ^= (1 << Red_LED_PIN);  // Toggle LED
 	              prevMillis14 = millis;
@@ -142,7 +118,34 @@ int main(void)
 	     GPIOD->ODR ^= (1 << Orange_LED_PIN);  // Toggle LED
 	  	    prevMillis13 = millis;
 	  	 }
-    /* USER CODE BEGIN 3 */
+
+		  */
+	  /*
+	  //Task 3
+	  uint8_t CurrentState = (BUTTON_PORT->IDR & (1 << BUTTON_PIN)) ? 1 : 0;
+	  if (CurrentState == 1 && PreviousState == 0){
+		  delay_ms(50);
+		  if (((BUTTON_PORT->IDR & (1 << BUTTON_PIN)) ? 1 : 0) == 1){
+			  GPIOD->ODR ^= (1 << Orange_LED_PIN);
+		  }
+	  }
+	  PreviousState = CurrentState;
+
+	  */
+	  //Task 4
+	  if(millis - prevMillis >= orangeBlinkPeriod){
+		  GPIOD->ODR ^= (1 << Orange_LED_PIN);
+		  prevMillis = millis;
+	  }
+	  uint8_t CurrentState = (BUTTON_PORT->IDR & (1 << BUTTON_PIN)) ? 1 : 0;
+	  if (CurrentState == 1 && PreviousState == 0){
+		  delay_ms(50);
+		  if (((BUTTON_PORT->IDR & (1 << BUTTON_PIN)) ? 1 : 0) == 1){
+			  orangeBlinkPeriod = orangeBlinkPeriod + 1000;
+		  }
+	  }
+	  PreviousState = CurrentState;
+
   }
   /* USER CODE END 3 */
 }
