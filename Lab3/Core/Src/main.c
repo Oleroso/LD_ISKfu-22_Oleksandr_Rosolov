@@ -21,42 +21,50 @@
 #include "stm32f4xx_it.h"
 
 
-//#define TASK_1
-//#define TASK_2
-//#define TASK_3
-//#define TASK_4
+//#define Task_1
+//#define Task_2
+#define Task_3
+#define Task_4
 
 TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim3;
 
 volatile uint32_t Red_Led_delay = 1000;
+volatile uint32_t Pressed = 0;
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-    if (GPIO_Pin == User_Button_Pin)
+    if ((GPIO_Pin == User_Button_Pin) && (Pressed == 0))
     {
-#ifdef TASK_1
-        HAL_GPIO_WritePin(GPIOD, Green_Led_Pin, GPIO_PIN_SET);
-#endif
-#ifdef TASK_2
-        if (Red_Led_delay < 4000)
-        	Red_Led_delay += 1500;
-        else
-        	Red_Led_delay = 1000;
-#endif
+		#ifdef Task_1
+				HAL_GPIO_WritePin(GPIOD, Green_Led_Pin, GPIO_PIN_SET);
+		#endif
+		#ifdef Task_2
+				Pressed = 1;
+				if (Red_Led_delay < 4000)
+				{
+
+					Red_Led_delay += 1500;
+				}
+				else{
+
+					Red_Led_delay = 1000;
+				}
+		#endif
+
     }
 }
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-#ifdef TASK_3
-    if (htim->Instance == TIM2)
-        HAL_GPIO_TogglePin(GPIOD, Blue_Led_Pin);
-#endif
-#ifdef TASK_4
-    if (htim->Instance == TIM3)
-        HAL_GPIO_TogglePin(GPIOD, Orange_Led_Pin);
-#endif
+	#ifdef Task_3
+		if (htim->Instance == TIM2)
+			HAL_GPIO_TogglePin(GPIOD, Blue_Led_Pin);
+	#endif
+	#ifdef Task_4
+		if (htim->Instance == TIM3)
+			HAL_GPIO_TogglePin(GPIOD, Orange_Led_Pin);
+	#endif
 }
 
 /* Private function prototypes -----------------------------------------------*/
@@ -88,51 +96,33 @@ int main(void)
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
-
-  /* USER CODE BEGIN Init */
-
-  /* USER CODE END Init */
-
-  /* Configure the system clock */
   SystemClock_Config();
-
-  /* USER CODE BEGIN SysInit */
-
-  /* USER CODE END SysInit */
-
-  /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_TIM2_Init();
   MX_TIM3_Init();
 
   /* Initialize interrupts */
   MX_NVIC_Init();
-  /* USER CODE BEGIN 2 */
-#ifdef TASK_3
-  HAL_TIM_Base_Start_IT(&htim2);
-#endif
-#ifdef TASK_4
-  HAL_TIM_Base_Start_IT(&htim3);
-#endif
+
+
+	#ifdef Task_3
+	  HAL_TIM_Base_Start_IT(&htim2);
+	#endif
+
+	#ifdef Task_4
+	  HAL_TIM_Base_Start_IT(&htim3);
+	#endif
 
   while (1)
-  {
-#ifdef TASK_2
-	  HAL_GPIO_TogglePin(GPIOD, Red_Led_Pin);
-	  HAL_Delay(Red_Led_delay);
-#endif
-    }
-  /* USER CODE END 2 */
+	  {
+		#ifdef Task_2
+			  HAL_GPIO_TogglePin(GPIOD, Red_Led_Pin);
+			  HAL_Delay(Red_Led_delay);
+			  Pressed = 0;
+		#endif
+	   }
 
-  /* Infinite loop */
-  /* USER CODE BEGIN WHILE */
-  while (1)
-  {
-    /* USER CODE END WHILE */
 
-    /* USER CODE BEGIN 3 */
-  }
-  /* USER CODE END 3 */
 }
 
 /**
@@ -187,12 +177,15 @@ void SystemClock_Config(void)
   */
 static void MX_NVIC_Init(void)
 {
-  /* EXTI0_IRQn interrupt configuration */
+
   HAL_NVIC_SetPriority(EXTI0_IRQn, 1, 1);
   HAL_NVIC_EnableIRQ(EXTI0_IRQn);
-  /* TIM2_IRQn interrupt configuration */
+
   HAL_NVIC_SetPriority(TIM2_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(TIM2_IRQn);
+
+    HAL_NVIC_SetPriority(TIM3_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(TIM3_IRQn);
 }
 
 /**
@@ -216,7 +209,7 @@ static void MX_TIM2_Init(void)
   htim2.Instance = TIM2;
   htim2.Init.Prescaler = 35999;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 2000;
+  htim2.Init.Period = 1000;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
@@ -261,7 +254,7 @@ static void MX_TIM3_Init(void)
   htim3.Instance = TIM3;
   htim3.Init.Prescaler = 35999;
   htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim3.Init.Period = 2000;
+  htim3.Init.Period = 4000;
   htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim3) != HAL_OK)
@@ -305,7 +298,7 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin : User_Button_Pin */
   GPIO_InitStruct.Pin = User_Button_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(User_Button_GPIO_Port, &GPIO_InitStruct);
 
