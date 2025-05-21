@@ -1,0 +1,6 @@
+../Core/Src/main.c:33:6:SysTick_Handler	1
+../Core/Src/main.c:36:6:delay_ms	2
+../Core/Src/main.c:40:6:GPIO_Config	1
+../Core/Src/main.c:60:6:SysTick_Config_Custom	1
+../Core/Src/main.c:68:5:main	5
+../Core/Src/main.c:204:6:Error_Handler	1

@@ -1,0 +1,1580 @@
+11:51:56 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:60:34: error: 'orange_led_Pin' undeclared (first use in this function); did you mean 'Orange_LED_Pin'?
+   60 |         HAL_GPIO_WritePin(GPIOD, orange_led_Pin, (counter & 0x01)); // Orange LED (LSB)
+      |                                  ^~~~~~~~~~~~~~
+      |                                  Orange_LED_Pin
+../Core/Src/main.c:60:34: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:61:34: error: 'red_led_Pin' undeclared (first use in this function); did you mean 'Red_LED_Pin'?
+   61 |         HAL_GPIO_WritePin(GPIOD, red_led_Pin, (counter & 0x02) >> 1); // Red LED (2nd bit)
+      |                                  ^~~~~~~~~~~
+      |                                  Red_LED_Pin
+../Core/Src/main.c:79:33: error: 'USER_BUTTON_Pin' undeclared (first use in this function); did you mean 'User_Button_Pin'?
+   79 |     if (HAL_GPIO_ReadPin(GPIOA, USER_BUTTON_Pin) == GPIO_PIN_SET) {
+      |                                 ^~~~~~~~~~~~~~~
+      |                                 User_Button_Pin
+../Core/Src/main.c:82:38: error: 'green_led_Pin' undeclared (first use in this function); did you mean 'Green_LED_Pin'?
+   82 |             HAL_GPIO_WritePin(GPIOD, green_led_Pin, greenLedState);
+      |                                      ^~~~~~~~~~~~~
+      |                                      Green_LED_Pin
+../Core/Src/main.c: In function 'MX_GPIO_Init':
+../Core/Src/main.c:114:25: error: 'green_led_Pin' undeclared (first use in this function); did you mean 'Green_LED_Pin'?
+  114 |   GPIO_InitStruct.Pin = green_led_Pin | orange_led_Pin | red_led_Pin;
+      |                         ^~~~~~~~~~~~~
+      |                         Green_LED_Pin
+../Core/Src/main.c:114:41: error: 'orange_led_Pin' undeclared (first use in this function); did you mean 'Orange_LED_Pin'?
+  114 |   GPIO_InitStruct.Pin = green_led_Pin | orange_led_Pin | red_led_Pin;
+      |                                         ^~~~~~~~~~~~~~
+      |                                         Orange_LED_Pin
+../Core/Src/main.c:114:58: error: 'red_led_Pin' undeclared (first use in this function); did you mean 'Red_LED_Pin'?
+  114 |   GPIO_InitStruct.Pin = green_led_Pin | orange_led_Pin | red_led_Pin;
+      |                                                          ^~~~~~~~~~~
+      |                                                          Red_LED_Pin
+../Core/Src/main.c:121:25: error: 'USER_BUTTON_Pin' undeclared (first use in this function); did you mean 'User_Button_Pin'?
+  121 |   GPIO_InitStruct.Pin = USER_BUTTON_Pin;
+      |                         ^~~~~~~~~~~~~~~
+      |                         User_Button_Pin
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+11:53:07 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:60:34: error: 'orange_led_Pin' undeclared (first use in this function); did you mean 'Orange_LED_Pin'?
+   60 |         HAL_GPIO_WritePin(GPIOD, orange_led_Pin, (counter & 0x01)); // Orange LED (LSB)
+      |                                  ^~~~~~~~~~~~~~
+      |                                  Orange_LED_Pin
+../Core/Src/main.c:60:34: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:61:34: error: 'red_led_Pin' undeclared (first use in this function); did you mean 'Red_LED_Pin'?
+   61 |         HAL_GPIO_WritePin(GPIOD, red_led_Pin, (counter & 0x02) >> 1); // Red LED (2nd bit)
+      |                                  ^~~~~~~~~~~
+      |                                  Red_LED_Pin
+../Core/Src/main.c:79:33: error: 'USER_BUTTON_Pin' undeclared (first use in this function); did you mean 'User_Button_Pin'?
+   79 |     if (HAL_GPIO_ReadPin(GPIOA, USER_BUTTON_Pin) == GPIO_PIN_SET) {
+      |                                 ^~~~~~~~~~~~~~~
+      |                                 User_Button_Pin
+../Core/Src/main.c:82:38: error: 'green_led_Pin' undeclared (first use in this function); did you mean 'Green_LED_Pin'?
+   82 |             HAL_GPIO_WritePin(GPIOD, green_led_Pin, greenLedState);
+      |                                      ^~~~~~~~~~~~~
+      |                                      Green_LED_Pin
+../Core/Src/main.c: In function 'MX_GPIO_Init':
+../Core/Src/main.c:114:41: error: 'Orande_LED_Pin' undeclared (first use in this function); did you mean 'Orange_LED_Pin'?
+  114 |   GPIO_InitStruct.Pin = Green_LED_Pin | Orande_LED_Pin | Red_LED_Pin;
+      |                                         ^~~~~~~~~~~~~~
+      |                                         Orange_LED_Pin
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+11:54:27 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:68:35: error: 'red_led_Pin' undeclared (first use in this function); did you mean 'Red_LED_Pin'?
+   68 |         HAL_GPIO_TogglePin(GPIOD, red_led_Pin);
+      |                                   ^~~~~~~~~~~
+      |                                   Red_LED_Pin
+../Core/Src/main.c:68:35: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:74:35: error: 'orange_led_Pin' undeclared (first use in this function); did you mean 'Orange_LED_Pin'?
+   74 |         HAL_GPIO_TogglePin(GPIOD, orange_led_Pin);
+      |                                   ^~~~~~~~~~~~~~
+      |                                   Orange_LED_Pin
+../Core/Src/main.c:88:33: error: 'USER_BUTTON_Pin' undeclared (first use in this function); did you mean 'User_Button_Pin'?
+   88 |     if (HAL_GPIO_ReadPin(GPIOA, USER_BUTTON_Pin) == GPIO_PIN_SET) {
+      |                                 ^~~~~~~~~~~~~~~
+      |                                 User_Button_Pin
+../Core/Src/main.c: In function 'MX_GPIO_Init':
+../Core/Src/main.c:114:41: error: 'Orande_LED_Pin' undeclared (first use in this function); did you mean 'Orange_LED_Pin'?
+  114 |   GPIO_InitStruct.Pin = Green_LED_Pin | Orande_LED_Pin | Red_LED_Pin;
+      |                                         ^~~~~~~~~~~~~~
+      |                                         Orange_LED_Pin
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+11:55:04 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'MX_GPIO_Init':
+../Core/Src/main.c:114:41: error: 'Orande_LED_Pin' undeclared (first use in this function); did you mean 'Orange_LED_Pin'?
+  114 |   GPIO_InitStruct.Pin = Green_LED_Pin | Orande_LED_Pin | Red_LED_Pin;
+      |                                         ^~~~~~~~~~~~~~
+      |                                         Orange_LED_Pin
+../Core/Src/main.c:114:41: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+11:55:16 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-size   Lab1.elf 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+   6256	     24	   1584	   7864	   1eb8	Lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.list
+ 
+11:55:24 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6256	     24	   1584	   7864	   1eb8	Lab1.elf
+Finished building: default.size.stdout
+ 
+11:55:45 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6256	     24	   1584	   7864	   1eb8	Lab1.elf
+Finished building: default.size.stdout
+ 
+12:01:18 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6256	     24	   1584	   7864	   1eb8	Lab1.elf
+Finished building: default.size.stdout
+ 
+12:02:55 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6256	     24	   1584	   7864	   1eb8	Lab1.elf
+Finished building: default.size.stdout
+ 
+10:44:03 **** Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6256	     24	   1584	   7864	   1eb8	Lab1.elf
+Finished building: default.size.stdout
+ 
+10:44:12 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6256	     24	   1584	   7864	   1eb8	Lab1.elf
+Finished building: default.size.stdout
+ 
+10:44:43 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6256	     24	   1584	   7864	   1eb8	Lab1.elf
+Finished building: default.size.stdout
+ 
+10:45:30 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6256	     24	   1584	   7864	   1eb8	Lab1.elf
+Finished building: default.size.stdout
+ 
+10:46:36 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6256	     24	   1584	   7864	   1eb8	Lab1.elf
+Finished building: default.size.stdout
+ 
+10:48:53 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6256	     24	   1584	   7864	   1eb8	Lab1.elf
+Finished building: default.size.stdout
+ 
+10:51:15 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6256	     24	   1584	   7864	   1eb8	Lab1.elf
+Finished building: default.size.stdout
+ 
+10:52:14 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6256	     24	   1584	   7864	   1eb8	Lab1.elf
+Finished building: default.size.stdout
+ 
+11:01:33 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6256	     24	   1584	   7864	   1eb8	Lab1.elf
+Finished building: default.size.stdout
+ 
+11:07:09 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6256	     24	   1584	   7864	   1eb8	Lab1.elf
+Finished building: default.size.stdout
+ 
+11:08:31 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6256	     24	   1584	   7864	   1eb8	Lab1.elf
+Finished building: default.size.stdout
+ 
+11:08:40 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6256	     24	   1584	   7864	   1eb8	Lab1.elf
+Finished building: default.size.stdout
+ 
+11:09:01 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6256	     24	   1584	   7864	   1eb8	Lab1.elf
+Finished building: default.size.stdout
+ 
+11:10:15 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6256	     24	   1584	   7864	   1eb8	Lab1.elf
+Finished building: default.size.stdout
+ 
+11:10:47 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6256	     24	   1584	   7864	   1eb8	Lab1.elf
+Finished building: default.size.stdout
+ 
+11:10:51 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6256	     24	   1584	   7864	   1eb8	Lab1.elf
+Finished building: default.size.stdout
+ 
+11:11:35 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6256	     24	   1584	   7864	   1eb8	Lab1.elf
+Finished building: default.size.stdout
+ 
+11:14:59 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6256	     24	   1584	   7864	   1eb8	Lab1.elf
+Finished building: default.size.stdout
+ 
+11:22:17 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6256	     24	   1584	   7864	   1eb8	Lab1.elf
+Finished building: default.size.stdout
+ 
+11:25:19 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6256	     24	   1584	   7864	   1eb8	Lab1.elf
+Finished building: default.size.stdout
+ 
+11:31:35 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6256	     24	   1584	   7864	   1eb8	Lab1.elf
+Finished building: default.size.stdout
+ 
+11:33:09 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6256	     24	   1584	   7864	   1eb8	Lab1.elf
+Finished building: default.size.stdout
+ 
+11:33:14 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6256	     24	   1584	   7864	   1eb8	Lab1.elf
+Finished building: default.size.stdout
+ 
+11:34:35 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6256	     24	   1584	   7864	   1eb8	Lab1.elf
+Finished building: default.size.stdout
+ 
+11:34:50 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6256	     24	   1584	   7864	   1eb8	Lab1.elf
+Finished building: default.size.stdout
+ 
+11:43:01 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-size   Lab1.elf 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+   6188	     24	   1576	   7788	   1e6c	Lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.list
+ 
+11:43:06 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6188	     24	   1576	   7788	   1e6c	Lab1.elf
+Finished building: default.size.stdout
+ 
+11:46:41 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:49:12: warning: unused variable 'prevOrangeMillis' [-Wunused-variable]
+   49 |   uint32_t prevOrangeMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:48:12: warning: unused variable 'prevMillis' [-Wunused-variable]
+   48 |   uint32_t prevMillis = HAL_GetTick();
+      |            ^~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-size   Lab1.elf 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+   5880	     20	   1572	   7472	   1d30	Lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.list
+ 
+11:47:03 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5880	     20	   1572	   7472	   1d30	Lab1.elf
+Finished building: default.size.stdout
+ 
+11:49:46 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:50:12: warning: unused variable 'prevRedMillis' [-Wunused-variable]
+   50 |   uint32_t prevRedMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~
+../Core/Src/main.c:48:12: warning: unused variable 'prevMillis' [-Wunused-variable]
+   48 |   uint32_t prevMillis = HAL_GetTick();
+      |            ^~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-size   Lab1.elf 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+   5884	     24	   1568	   7476	   1d34	Lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.list
+ 
+11:49:49 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5884	     24	   1568	   7476	   1d34	Lab1.elf
+Finished building: default.size.stdout
+ 
+11:51:54 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:50:12: warning: unused variable 'prevRedMillis' [-Wunused-variable]
+   50 |   uint32_t prevRedMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~
+../Core/Src/main.c:49:12: warning: unused variable 'prevOrangeMillis' [-Wunused-variable]
+   49 |   uint32_t prevOrangeMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:48:12: warning: unused variable 'prevMillis' [-Wunused-variable]
+   48 |   uint32_t prevMillis = HAL_GetTick();
+      |            ^~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-size   Lab1.elf 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+   5984	     20	   1580	   7584	   1da0	Lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.list
+ 
+11:51:57 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5984	     20	   1580	   7584	   1da0	Lab1.elf
+Finished building: default.size.stdout
+ 
+11:53:52 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:50:12: warning: unused variable 'prevRedMillis' [-Wunused-variable]
+   50 |   uint32_t prevRedMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~
+../Core/Src/main.c:49:12: warning: unused variable 'prevOrangeMillis' [-Wunused-variable]
+   49 |   uint32_t prevOrangeMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:48:12: warning: unused variable 'prevMillis' [-Wunused-variable]
+   48 |   uint32_t prevMillis = HAL_GetTick();
+      |            ^~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-size   Lab1.elf 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+   5976	     20	   1580	   7576	   1d98	Lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.list
+ 
+11:53:56 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5976	     20	   1580	   7576	   1d98	Lab1.elf
+Finished building: default.size.stdout
+ 
+11:54:38 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:50:12: warning: unused variable 'prevRedMillis' [-Wunused-variable]
+   50 |   uint32_t prevRedMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~
+../Core/Src/main.c:49:12: warning: unused variable 'prevOrangeMillis' [-Wunused-variable]
+   49 |   uint32_t prevOrangeMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:48:12: warning: unused variable 'prevMillis' [-Wunused-variable]
+   48 |   uint32_t prevMillis = HAL_GetTick();
+      |            ^~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-size   Lab1.elf 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+   5976	     20	   1580	   7576	   1d98	Lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.list
+ 
+11:54:43 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5976	     20	   1580	   7576	   1d98	Lab1.elf
+Finished building: default.size.stdout
+ 
+11:56:52 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:50:12: warning: unused variable 'prevRedMillis' [-Wunused-variable]
+   50 |   uint32_t prevRedMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~
+../Core/Src/main.c:49:12: warning: unused variable 'prevOrangeMillis' [-Wunused-variable]
+   49 |   uint32_t prevOrangeMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:48:12: warning: unused variable 'prevMillis' [-Wunused-variable]
+   48 |   uint32_t prevMillis = HAL_GetTick();
+      |            ^~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-size   Lab1.elf 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+   5984	     20	   1580	   7584	   1da0	Lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.list
+ 
+10:42:45 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:49:12: warning: unused variable 'prevOrangeMillis' [-Wunused-variable]
+   49 |   uint32_t prevOrangeMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:48:12: warning: unused variable 'prevMillis' [-Wunused-variable]
+   48 |   uint32_t prevMillis = HAL_GetTick();
+      |            ^~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-size   Lab1.elf 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+   5880	     20	   1572	   7472	   1d30	Lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.list
+ 
+10:45:03 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:48:12: warning: unused variable 'prevMillis' [-Wunused-variable]
+   48 |   uint32_t prevMillis = HAL_GetTick();
+      |            ^~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-size   Lab1.elf 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+   5904	     20	   1572	   7496	   1d48	Lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.list
+ 
+10:45:07 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-size   Lab1.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5904	     20	   1572	   7496	   1d48	Lab1.elf
+Finished building: default.size.stdout
+ 
+10:54:00 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:50:12: warning: unused variable 'prevRedMillis' [-Wunused-variable]
+   50 |   uint32_t prevRedMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~
+../Core/Src/main.c:49:12: warning: unused variable 'prevOrangeMillis' [-Wunused-variable]
+   49 |   uint32_t prevOrangeMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:48:12: warning: unused variable 'prevMillis' [-Wunused-variable]
+   48 |   uint32_t prevMillis = HAL_GetTick();
+      |            ^~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-size   Lab1.elf 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+   5984	     20	   1580	   7584	   1da0	Lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.list
+ 
+10:55:16 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:50:12: warning: unused variable 'prevRedMillis' [-Wunused-variable]
+   50 |   uint32_t prevRedMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~
+../Core/Src/main.c:49:12: warning: unused variable 'prevOrangeMillis' [-Wunused-variable]
+   49 |   uint32_t prevOrangeMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:48:12: warning: unused variable 'prevMillis' [-Wunused-variable]
+   48 |   uint32_t prevMillis = HAL_GetTick();
+      |            ^~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-size   Lab1.elf 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+   5968	     20	   1580	   7568	   1d90	Lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.list
+ 
+10:57:51 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:50:12: warning: unused variable 'prevRedMillis' [-Wunused-variable]
+   50 |   uint32_t prevRedMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~
+../Core/Src/main.c:49:12: warning: unused variable 'prevOrangeMillis' [-Wunused-variable]
+   49 |   uint32_t prevOrangeMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:48:12: warning: unused variable 'prevMillis' [-Wunused-variable]
+   48 |   uint32_t prevMillis = HAL_GetTick();
+      |            ^~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-size   Lab1.elf 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+   5948	     20	   1580	   7548	   1d7c	Lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.list
+ 
+10:58:37 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:82:17: error: too few arguments to function 'HAL_GPIO_WritePin'
+   82 |                 HAL_GPIO_WritePin(GPIOD, Green_LED_Pin);
+      |                 ^~~~~~~~~~~~~~~~~
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:279,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h:235:6: note: declared here
+  235 | void HAL_GPIO_WritePin(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_PinState PinState);
+      |      ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:50:12: warning: unused variable 'prevRedMillis' [-Wunused-variable]
+   50 |   uint32_t prevRedMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~
+../Core/Src/main.c:49:12: warning: unused variable 'prevOrangeMillis' [-Wunused-variable]
+   49 |   uint32_t prevOrangeMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:48:12: warning: unused variable 'prevMillis' [-Wunused-variable]
+   48 |   uint32_t prevMillis = HAL_GetTick();
+      |            ^~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+10:58:50 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:50:12: warning: unused variable 'prevRedMillis' [-Wunused-variable]
+   50 |   uint32_t prevRedMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~
+../Core/Src/main.c:49:12: warning: unused variable 'prevOrangeMillis' [-Wunused-variable]
+   49 |   uint32_t prevOrangeMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:48:12: warning: unused variable 'prevMillis' [-Wunused-variable]
+   48 |   uint32_t prevMillis = HAL_GetTick();
+      |            ^~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-size   Lab1.elf 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+   5940	     20	   1572	   7532	   1d6c	Lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.list
+ 
+11:07:02 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:50:12: warning: unused variable 'prevRedMillis' [-Wunused-variable]
+   50 |   uint32_t prevRedMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~
+../Core/Src/main.c:49:12: warning: unused variable 'prevOrangeMillis' [-Wunused-variable]
+   49 |   uint32_t prevOrangeMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:48:12: warning: unused variable 'prevMillis' [-Wunused-variable]
+   48 |   uint32_t prevMillis = HAL_GetTick();
+      |            ^~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-size   Lab1.elf 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+   5968	     20	   1572	   7560	   1d88	Lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.list
+ 
+11:10:45 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:55:14: warning: unused variable 'currentMillis' [-Wunused-variable]
+   55 |     uint32_t currentMillis = HAL_GetTick();
+      |              ^~~~~~~~~~~~~
+../Core/Src/main.c:50:12: warning: unused variable 'prevRedMillis' [-Wunused-variable]
+   50 |   uint32_t prevRedMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~
+../Core/Src/main.c:49:12: warning: unused variable 'prevOrangeMillis' [-Wunused-variable]
+   49 |   uint32_t prevOrangeMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:48:12: warning: unused variable 'prevMillis' [-Wunused-variable]
+   48 |   uint32_t prevMillis = HAL_GetTick();
+      |            ^~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-size   Lab1.elf 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+   5796	     20	   1572	   7388	   1cdc	Lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.list
+ 
+11:13:45 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:50:12: warning: unused variable 'prevRedMillis' [-Wunused-variable]
+   50 |   uint32_t prevRedMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~
+../Core/Src/main.c:49:12: warning: unused variable 'prevOrangeMillis' [-Wunused-variable]
+   49 |   uint32_t prevOrangeMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:48:12: warning: unused variable 'prevMillis' [-Wunused-variable]
+   48 |   uint32_t prevMillis = HAL_GetTick();
+      |            ^~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-size   Lab1.elf 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+   5924	     24	   1576	   7524	   1d64	Lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.list
+ 
+11:14:14 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:50:12: warning: unused variable 'prevRedMillis' [-Wunused-variable]
+   50 |   uint32_t prevRedMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~
+../Core/Src/main.c:49:12: warning: unused variable 'prevOrangeMillis' [-Wunused-variable]
+   49 |   uint32_t prevOrangeMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:48:12: warning: unused variable 'prevMillis' [-Wunused-variable]
+   48 |   uint32_t prevMillis = HAL_GetTick();
+      |            ^~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-size   Lab1.elf 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+   6032	     24	   1576	   7632	   1dd0	Lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.list
+ 
+11:18:04 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:50:12: warning: unused variable 'prevRedMillis' [-Wunused-variable]
+   50 |   uint32_t prevRedMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~
+../Core/Src/main.c:49:12: warning: unused variable 'prevOrangeMillis' [-Wunused-variable]
+   49 |   uint32_t prevOrangeMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:48:12: warning: unused variable 'prevMillis' [-Wunused-variable]
+   48 |   uint32_t prevMillis = HAL_GetTick();
+      |            ^~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-size   Lab1.elf 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+   5992	     24	   1576	   7592	   1da8	Lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.list
+ 
+11:19:47 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:105:13: error: invalid storage class for function 'MX_GPIO_Init'
+  105 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:169:1: error: expected declaration or statement at end of input
+  169 | }
+      | ^
+../Core/Src/main.c:50:12: warning: unused variable 'prevRedMillis' [-Wunused-variable]
+   50 |   uint32_t prevRedMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~
+../Core/Src/main.c:49:12: warning: unused variable 'prevOrangeMillis' [-Wunused-variable]
+   49 |   uint32_t prevOrangeMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:48:12: warning: unused variable 'prevMillis' [-Wunused-variable]
+   48 |   uint32_t prevMillis = HAL_GetTick();
+      |            ^~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:30:13: warning: 'MX_GPIO_Init' used but never defined
+   30 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:165:6: warning: 'Error_Handler' defined but not used [-Wunused-function]
+  165 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:132:6: warning: 'SystemClock_Config' defined but not used [-Wunused-function]
+  132 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:105:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  105 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+11:20:07 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:50:12: warning: unused variable 'prevRedMillis' [-Wunused-variable]
+   50 |   uint32_t prevRedMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~
+../Core/Src/main.c:49:12: warning: unused variable 'prevOrangeMillis' [-Wunused-variable]
+   49 |   uint32_t prevOrangeMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:48:12: warning: unused variable 'prevMillis' [-Wunused-variable]
+   48 |   uint32_t prevMillis = HAL_GetTick();
+      |            ^~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-size   Lab1.elf 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+   5972	     24	   1576	   7572	   1d94	Lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.list
+ 
+11:21:09 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:50:12: warning: unused variable 'prevRedMillis' [-Wunused-variable]
+   50 |   uint32_t prevRedMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~
+../Core/Src/main.c:49:12: warning: unused variable 'prevOrangeMillis' [-Wunused-variable]
+   49 |   uint32_t prevOrangeMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:48:12: warning: unused variable 'prevMillis' [-Wunused-variable]
+   48 |   uint32_t prevMillis = HAL_GetTick();
+      |            ^~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-size   Lab1.elf 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+   5992	     24	   1576	   7592	   1da8	Lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.list
+ 
+11:25:40 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:50:12: warning: unused variable 'prevRedMillis' [-Wunused-variable]
+   50 |   uint32_t prevRedMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~
+../Core/Src/main.c:49:12: warning: unused variable 'prevOrangeMillis' [-Wunused-variable]
+   49 |   uint32_t prevOrangeMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:48:12: warning: unused variable 'prevMillis' [-Wunused-variable]
+   48 |   uint32_t prevMillis = HAL_GetTick();
+      |            ^~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-size   Lab1.elf 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+   5992	     24	   1576	   7592	   1da8	Lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.list
+ 
+11:35:42 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:50:12: warning: unused variable 'prevRedMillis' [-Wunused-variable]
+   50 |   uint32_t prevRedMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~
+../Core/Src/main.c:49:12: warning: unused variable 'prevOrangeMillis' [-Wunused-variable]
+   49 |   uint32_t prevOrangeMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:48:12: warning: unused variable 'prevMillis' [-Wunused-variable]
+   48 |   uint32_t prevMillis = HAL_GetTick();
+      |            ^~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-size   Lab1.elf 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+   5988	     24	   1576	   7588	   1da4	Lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.list
+ 
+11:38:33 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:50:12: warning: unused variable 'prevRedMillis' [-Wunused-variable]
+   50 |   uint32_t prevRedMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~
+../Core/Src/main.c:49:12: warning: unused variable 'prevOrangeMillis' [-Wunused-variable]
+   49 |   uint32_t prevOrangeMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:48:12: warning: unused variable 'prevMillis' [-Wunused-variable]
+   48 |   uint32_t prevMillis = HAL_GetTick();
+      |            ^~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-size   Lab1.elf 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+   5968	     24	   1576	   7568	   1d90	Lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.list
+ 
+11:42:15 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:50:12: warning: unused variable 'prevRedMillis' [-Wunused-variable]
+   50 |   uint32_t prevRedMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~
+../Core/Src/main.c:49:12: warning: unused variable 'prevOrangeMillis' [-Wunused-variable]
+   49 |   uint32_t prevOrangeMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:48:12: warning: unused variable 'prevMillis' [-Wunused-variable]
+   48 |   uint32_t prevMillis = HAL_GetTick();
+      |            ^~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-size   Lab1.elf 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+   6008	     28	   1572	   7608	   1db8	Lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.list
+ 
+11:53:20 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:50:12: warning: unused variable 'prevRedMillis' [-Wunused-variable]
+   50 |   uint32_t prevRedMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~
+../Core/Src/main.c:49:12: warning: unused variable 'prevOrangeMillis' [-Wunused-variable]
+   49 |   uint32_t prevOrangeMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-size   Lab1.elf 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+   5976	     20	   1572	   7568	   1d90	Lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.list
+ 
+11:54:48 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:55:14: warning: unused variable 'currentMillis' [-Wunused-variable]
+   55 |     uint32_t currentMillis = HAL_GetTick();
+      |              ^~~~~~~~~~~~~
+../Core/Src/main.c:50:12: warning: unused variable 'prevRedMillis' [-Wunused-variable]
+   50 |   uint32_t prevRedMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~
+../Core/Src/main.c:49:12: warning: unused variable 'prevOrangeMillis' [-Wunused-variable]
+   49 |   uint32_t prevOrangeMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:48:12: warning: unused variable 'prevMillis' [-Wunused-variable]
+   48 |   uint32_t prevMillis = HAL_GetTick();
+      |            ^~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-size   Lab1.elf 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+   5796	     20	   1572	   7388	   1cdc	Lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.list
+ 
+11:55:05 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:48:12: warning: unused variable 'prevMillis' [-Wunused-variable]
+   48 |   uint32_t prevMillis = HAL_GetTick();
+      |            ^~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-size   Lab1.elf 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+   5908	     20	   1572	   7500	   1d4c	Lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.list
+ 
+11:56:30 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:48:12: warning: unused variable 'prevMillis' [-Wunused-variable]
+   48 |   uint32_t prevMillis = HAL_GetTick();
+      |            ^~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-size   Lab1.elf 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+   5908	     20	   1572	   7500	   1d4c	Lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.list
+ 
+11:58:53 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:48:12: warning: unused variable 'prevMillis' [-Wunused-variable]
+   48 |   uint32_t prevMillis = HAL_GetTick();
+      |            ^~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-size   Lab1.elf 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+   5908	     20	   1572	   7500	   1d4c	Lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.list
+ 
+11:59:38 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:50:12: warning: unused variable 'prevRedMillis' [-Wunused-variable]
+   50 |   uint32_t prevRedMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~
+../Core/Src/main.c:49:12: warning: unused variable 'prevOrangeMillis' [-Wunused-variable]
+   49 |   uint32_t prevOrangeMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-size   Lab1.elf 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+   5976	     20	   1572	   7568	   1d90	Lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.list
+ 
+12:00:35 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:50:12: warning: unused variable 'prevRedMillis' [-Wunused-variable]
+   50 |   uint32_t prevRedMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~
+../Core/Src/main.c:49:12: warning: unused variable 'prevOrangeMillis' [-Wunused-variable]
+   49 |   uint32_t prevOrangeMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-size   Lab1.elf 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+   5992	     20	   1572	   7584	   1da0	Lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.list
+ 
+12:01:33 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:48:12: warning: unused variable 'prevMillis' [-Wunused-variable]
+   48 |   uint32_t prevMillis = HAL_GetTick();
+      |            ^~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-size   Lab1.elf 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+   5908	     20	   1572	   7500	   1d4c	Lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.list
+ 
+12:02:05 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:55:14: warning: unused variable 'currentMillis' [-Wunused-variable]
+   55 |     uint32_t currentMillis = HAL_GetTick();
+      |              ^~~~~~~~~~~~~
+../Core/Src/main.c:50:12: warning: unused variable 'prevRedMillis' [-Wunused-variable]
+   50 |   uint32_t prevRedMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~
+../Core/Src/main.c:49:12: warning: unused variable 'prevOrangeMillis' [-Wunused-variable]
+   49 |   uint32_t prevOrangeMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:48:12: warning: unused variable 'prevMillis' [-Wunused-variable]
+   48 |   uint32_t prevMillis = HAL_GetTick();
+      |            ^~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-size   Lab1.elf 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+   5956	     20	   1572	   7548	   1d7c	Lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.list
+ 
+12:02:40 **** Incremental Build of configuration Debug for project Lab1 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:50:12: warning: unused variable 'prevRedMillis' [-Wunused-variable]
+   50 |   uint32_t prevRedMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~
+../Core/Src/main.c:49:12: warning: unused variable 'prevOrangeMillis' [-Wunused-variable]
+   49 |   uint32_t prevOrangeMillis = HAL_GetTick();
+      |            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:48:12: warning: unused variable 'prevMillis' [-Wunused-variable]
+   48 |   uint32_t prevMillis = HAL_GetTick();
+      |            ^~~~~~~~~~
+arm-none-eabi-gcc -o "Lab1.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab1\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab1.elf
+ 
+arm-none-eabi-size   Lab1.elf 
+arm-none-eabi-objdump -h -S  Lab1.elf  > "Lab1.list"
+   text	   data	    bss	    dec	    hex	filename
+   6008	     28	   1572	   7608	   1db8	Lab1.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1.list
+ 
+11:21:04 **** Build of configuration Debug for project Lab2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o"
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32f407vgtx.d" -MT"Core/Startup/startup_stm32f407vgtx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Startup/startup_stm32f407vgtx.o" "../Core/Startup/startup_stm32f407vgtx.s"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/syscalls.o"
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32f4xx.d" -MT"Core/Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32f4xx.o"
+arm-none-eabi-gcc -o "Lab2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab2\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab2.elf
+ 
+arm-none-eabi-size   Lab2.elf 
+arm-none-eabi-objdump -h -S  Lab2.elf  > "Lab2.list"
+   text	   data	    bss	    dec	    hex	filename
+   5860	     20	   1572	   7452	   1d1c	Lab2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab2.list
+ 
+11:53:44 **** Clean-only build of configuration Debug for project Lab2 ****
+make -j8 clean 
+rm -rf ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.su ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.cyclo ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.d ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.su
+rm -rf ./Core/Startup/startup_stm32f407vgtx.d ./Core/Startup/startup_stm32f407vgtx.o
+rm -rf ./Core/Src/main.cyclo ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/stm32f4xx_hal_msp.cyclo ./Core/Src/stm32f4xx_hal_msp.d ./Core/Src/stm32f4xx_hal_msp.o ./Core/Src/stm32f4xx_hal_msp.su ./Core/Src/stm32f4xx_it.cyclo ./Core/Src/stm32f4xx_it.d ./Core/Src/stm32f4xx_it.o ./Core/Src/stm32f4xx_it.su ./Core/Src/syscalls.cyclo ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.cyclo ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32f4xx.cyclo ./Core/Src/system_stm32f4xx.d ./Core/Src/system_stm32f4xx.o ./Core/Src/system_stm32f4xx.su
+rm -rf Lab2.elf Lab2.list Lab2.map default.size.stdout
+ 
+11:53:45 **** Build of configuration Debug for project Lab2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o"
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32f407vgtx.d" -MT"Core/Startup/startup_stm32f407vgtx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Startup/startup_stm32f407vgtx.o" "../Core/Startup/startup_stm32f407vgtx.s"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/syscalls.o"
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32f4xx.d" -MT"Core/Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32f4xx.o"
+arm-none-eabi-gcc -o "Lab2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab2\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab2.elf
+ 
+arm-none-eabi-size   Lab2.elf 
+arm-none-eabi-objdump -h -S  Lab2.elf  > "Lab2.list"
+   text	   data	    bss	    dec	    hex	filename
+   1064	      8	   1568	   2640	    a50	Lab2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab2.list
+ 
+11:01:04 **** Incremental Build of configuration Debug for project Lab2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o"
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32f407vgtx.d" -MT"Core/Startup/startup_stm32f407vgtx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Startup/startup_stm32f407vgtx.o" "../Core/Startup/startup_stm32f407vgtx.s"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/syscalls.o"
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sysmem.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:81:12: warning: unused variable 'prevMillis' [-Wunused-variable]
+   81 |   uint32_t prevMillis = 0;
+      |            ^~~~~~~~~~
+../Core/Src/main.c:80:12: warning: unused variable 'prevMillis13' [-Wunused-variable]
+   80 |   uint32_t prevMillis13 = 0;
+      |            ^~~~~~~~~~~~
+../Core/Src/main.c:79:12: warning: unused variable 'prevMillis14' [-Wunused-variable]
+   79 |   uint32_t prevMillis14 = 0;
+      |            ^~~~~~~~~~~~
+arm-none-eabi-gcc "../Core/Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32f4xx.d" -MT"Core/Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32f4xx.o"
+arm-none-eabi-gcc -o "Lab2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab2\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab2.elf
+ 
+arm-none-eabi-size   Lab2.elf 
+arm-none-eabi-objdump -h -S  Lab2.elf  > "Lab2.list"
+arm-none-eabi-size: Lab2.elf: Permission denied
+make: *** [makefile:69: default.size.stdout] Error 1
+make: *** Waiting for unfinished jobs....
+arm-none-eabi-objdump: Lab2.elf: Permission denied
+make: *** [makefile:74: Lab2.list] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+11:02:00 **** Incremental Build of configuration Debug for project Lab2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Lab2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab2\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab2.elf
+ 
+arm-none-eabi-size   Lab2.elf 
+arm-none-eabi-objdump -h -S  Lab2.elf  > "Lab2.list"
+   text	   data	    bss	    dec	    hex	filename
+   1160	      8	   1568	   2736	    ab0	Lab2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab2.list
+ 
+11:02:04 **** Incremental Build of configuration Debug for project Lab2 ****
+make -j8 all 
+arm-none-eabi-size   Lab2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1160	      8	   1568	   2736	    ab0	Lab2.elf
+Finished building: default.size.stdout
+ 
+11:10:33 **** Incremental Build of configuration Debug for project Lab2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Lab2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab2\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab2.elf
+ 
+arm-none-eabi-size   Lab2.elf 
+arm-none-eabi-objdump -h -S  Lab2.elf  > "Lab2.list"
+   text	   data	    bss	    dec	    hex	filename
+   1168	      8	   1568	   2744	    ab8	Lab2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab2.list
+ 
+11:19:17 **** Incremental Build of configuration Debug for project Lab2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:134:49: error: lvalue required as left operand of assignment
+  134 |           if (CurrentState = 1 && PreviousState = 0){
+      |                                                 ^
+../Core/Src/main.c:82:11: warning: unused variable 'released' [-Wunused-variable]
+   82 |   uint8_t released = 1;
+      |           ^~~~~~~~
+../Core/Src/main.c:81:12: warning: unused variable 'prevMillis' [-Wunused-variable]
+   81 |   uint32_t prevMillis = 0;
+      |            ^~~~~~~~~~
+../Core/Src/main.c:80:12: warning: unused variable 'prevMillis13' [-Wunused-variable]
+   80 |   uint32_t prevMillis13 = 0;
+      |            ^~~~~~~~~~~~
+../Core/Src/main.c:79:12: warning: unused variable 'prevMillis14' [-Wunused-variable]
+   79 |   uint32_t prevMillis14 = 0;
+      |            ^~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+11:19:34 **** Incremental Build of configuration Debug for project Lab2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:82:11: warning: unused variable 'released' [-Wunused-variable]
+   82 |   uint8_t released = 1;
+      |           ^~~~~~~~
+../Core/Src/main.c:81:12: warning: unused variable 'prevMillis' [-Wunused-variable]
+   81 |   uint32_t prevMillis = 0;
+      |            ^~~~~~~~~~
+../Core/Src/main.c:80:12: warning: unused variable 'prevMillis13' [-Wunused-variable]
+   80 |   uint32_t prevMillis13 = 0;
+      |            ^~~~~~~~~~~~
+../Core/Src/main.c:79:12: warning: unused variable 'prevMillis14' [-Wunused-variable]
+   79 |   uint32_t prevMillis14 = 0;
+      |            ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "Lab2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab2\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab2.elf
+ 
+arm-none-eabi-size   Lab2.elf 
+arm-none-eabi-objdump -h -S  Lab2.elf  > "Lab2.list"
+   text	   data	    bss	    dec	    hex	filename
+   1196	      8	   1568	   2772	    ad4	Lab2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab2.list
+ 
+11:34:09 **** Incremental Build of configuration Debug for project Lab2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:83:11: warning: unused variable 'released' [-Wunused-variable]
+   83 |   uint8_t released = 1;
+      |           ^~~~~~~~
+../Core/Src/main.c:80:12: warning: unused variable 'prevMillis13' [-Wunused-variable]
+   80 |   uint32_t prevMillis13 = 0;
+      |            ^~~~~~~~~~~~
+../Core/Src/main.c:79:12: warning: unused variable 'prevMillis14' [-Wunused-variable]
+   79 |   uint32_t prevMillis14 = 0;
+      |            ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "Lab2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab2\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab2.elf
+ 
+arm-none-eabi-size   Lab2.elf 
+arm-none-eabi-objdump -h -S  Lab2.elf  > "Lab2.list"
+   text	   data	    bss	    dec	    hex	filename
+   1232	      8	   1568	   2808	    af8	Lab2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab2.list
+ 
+11:36:42 **** Incremental Build of configuration Debug for project Lab2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:84:11: warning: unused variable 'PreviousState' [-Wunused-variable]
+   84 |   uint8_t PreviousState = 0;
+      |           ^~~~~~~~~~~~~
+../Core/Src/main.c:83:11: warning: unused variable 'released' [-Wunused-variable]
+   83 |   uint8_t released = 1;
+      |           ^~~~~~~~
+../Core/Src/main.c:82:12: warning: unused variable 'orangeBlinkPeriod' [-Wunused-variable]
+   82 |   uint32_t orangeBlinkPeriod = 1000;
+      |            ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:80:12: warning: unused variable 'prevMillis13' [-Wunused-variable]
+   80 |   uint32_t prevMillis13 = 0;
+      |            ^~~~~~~~~~~~
+../Core/Src/main.c:79:12: warning: unused variable 'prevMillis14' [-Wunused-variable]
+   79 |   uint32_t prevMillis14 = 0;
+      |            ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "Lab2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab2\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab2.elf
+ 
+arm-none-eabi-size   Lab2.elf 
+arm-none-eabi-objdump -h -S  Lab2.elf  > "Lab2.list"
+   text	   data	    bss	    dec	    hex	filename
+   1280	      8	   1568	   2856	    b28	Lab2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab2.list
+ 
+11:37:10 **** Incremental Build of configuration Debug for project Lab2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:84:11: warning: unused variable 'PreviousState' [-Wunused-variable]
+   84 |   uint8_t PreviousState = 0;
+      |           ^~~~~~~~~~~~~
+../Core/Src/main.c:83:11: warning: unused variable 'released' [-Wunused-variable]
+   83 |   uint8_t released = 1;
+      |           ^~~~~~~~
+../Core/Src/main.c:82:12: warning: unused variable 'orangeBlinkPeriod' [-Wunused-variable]
+   82 |   uint32_t orangeBlinkPeriod = 1000;
+      |            ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:81:12: warning: unused variable 'prevMillis' [-Wunused-variable]
+   81 |   uint32_t prevMillis = 0;
+      |            ^~~~~~~~~~
+arm-none-eabi-gcc -o "Lab2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab2\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab2.elf
+ 
+arm-none-eabi-size   Lab2.elf 
+arm-none-eabi-objdump -h -S  Lab2.elf  > "Lab2.list"
+   text	   data	    bss	    dec	    hex	filename
+   1152	      8	   1568	   2728	    aa8	Lab2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab2.list
+ 
+11:38:34 **** Incremental Build of configuration Debug for project Lab2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:83:11: warning: unused variable 'PreviousState' [-Wunused-variable]
+   83 |   uint8_t PreviousState = 0;
+      |           ^~~~~~~~~~~~~
+../Core/Src/main.c:82:12: warning: unused variable 'orangeBlinkPeriod' [-Wunused-variable]
+   82 |   uint32_t orangeBlinkPeriod = 1000;
+      |            ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:80:12: warning: unused variable 'prevMillis13' [-Wunused-variable]
+   80 |   uint32_t prevMillis13 = 0;
+      |            ^~~~~~~~~~~~
+../Core/Src/main.c:79:12: warning: unused variable 'prevMillis14' [-Wunused-variable]
+   79 |   uint32_t prevMillis14 = 0;
+      |            ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "Lab2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab2\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab2.elf
+ 
+arm-none-eabi-size   Lab2.elf 
+arm-none-eabi-objdump -h -S  Lab2.elf  > "Lab2.list"
+   text	   data	    bss	    dec	    hex	filename
+   1276	      8	   1568	   2852	    b24	Lab2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab2.list
+ 
+11:43:47 **** Incremental Build of configuration Debug for project Lab2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:83:11: warning: unused variable 'PreviousState' [-Wunused-variable]
+   83 |   uint8_t PreviousState = 0;
+      |           ^~~~~~~~~~~~~
+../Core/Src/main.c:82:12: warning: unused variable 'orangeBlinkPeriod' [-Wunused-variable]
+   82 |   uint32_t orangeBlinkPeriod = 1000;
+      |            ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:81:12: warning: unused variable 'prevMillis' [-Wunused-variable]
+   81 |   uint32_t prevMillis = 0;
+      |            ^~~~~~~~~~
+arm-none-eabi-gcc -o "Lab2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab2\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab2.elf
+ 
+arm-none-eabi-size   Lab2.elf 
+arm-none-eabi-objdump -h -S  Lab2.elf  > "Lab2.list"
+   text	   data	    bss	    dec	    hex	filename
+   1148	      8	   1568	   2724	    aa4	Lab2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab2.list
+ 
+11:44:18 **** Incremental Build of configuration Debug for project Lab2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:82:12: warning: unused variable 'orangeBlinkPeriod' [-Wunused-variable]
+   82 |   uint32_t orangeBlinkPeriod = 1000;
+      |            ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:81:12: warning: unused variable 'prevMillis' [-Wunused-variable]
+   81 |   uint32_t prevMillis = 0;
+      |            ^~~~~~~~~~
+../Core/Src/main.c:80:12: warning: unused variable 'prevMillis13' [-Wunused-variable]
+   80 |   uint32_t prevMillis13 = 0;
+      |            ^~~~~~~~~~~~
+../Core/Src/main.c:79:12: warning: unused variable 'prevMillis14' [-Wunused-variable]
+   79 |   uint32_t prevMillis14 = 0;
+      |            ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "Lab2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab2\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab2.elf
+ 
+arm-none-eabi-size   Lab2.elf 
+arm-none-eabi-objdump -h -S  Lab2.elf  > "Lab2.list"
+   text	   data	    bss	    dec	    hex	filename
+   1196	      8	   1568	   2772	    ad4	Lab2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab2.list
+ 
+11:44:51 **** Incremental Build of configuration Debug for project Lab2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:80:12: warning: unused variable 'prevMillis13' [-Wunused-variable]
+   80 |   uint32_t prevMillis13 = 0;
+      |            ^~~~~~~~~~~~
+../Core/Src/main.c:79:12: warning: unused variable 'prevMillis14' [-Wunused-variable]
+   79 |   uint32_t prevMillis14 = 0;
+      |            ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "Lab2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab2\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab2.elf
+ 
+arm-none-eabi-size   Lab2.elf 
+arm-none-eabi-objdump -h -S  Lab2.elf  > "Lab2.list"
+   text	   data	    bss	    dec	    hex	filename
+   1228	      8	   1568	   2804	    af4	Lab2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab2.list
+ 

@@ -1,0 +1,24 @@
+11:44:51 **** Incremental Build of configuration Debug for project Lab2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:80:12: warning: unused variable 'prevMillis13' [-Wunused-variable]
+   80 |   uint32_t prevMillis13 = 0;
+      |            ^~~~~~~~~~~~
+../Core/Src/main.c:79:12: warning: unused variable 'prevMillis14' [-Wunused-variable]
+   79 |   uint32_t prevMillis14 = 0;
+      |            ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "Lab2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\20222214\Documents\WorkplaceRosolov\Lab2\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab2.elf
+ 
+arm-none-eabi-size   Lab2.elf 
+arm-none-eabi-objdump -h -S  Lab2.elf  > "Lab2.list"
+   text	   data	    bss	    dec	    hex	filename
+   1228	      8	   1568	   2804	    af4	Lab2.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab2.list
+ 
+
+11:44:51 Build Finished. 0 errors, 2 warnings. (took 825ms)
+

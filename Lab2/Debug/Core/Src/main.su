@@ -1,0 +1,6 @@
+../Core/Src/main.c:33:6:SysTick_Handler	4	static
+../Core/Src/main.c:36:6:delay_ms	24	static
+../Core/Src/main.c:40:6:GPIO_Config	4	static
+../Core/Src/main.c:60:6:SysTick_Config_Custom	4	static
+../Core/Src/main.c:68:5:main	32	static
+../Core/Src/main.c:204:6:Error_Handler	4	static,ignoring_inline_asm
